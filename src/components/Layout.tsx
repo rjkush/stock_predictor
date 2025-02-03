@@ -116,6 +116,9 @@ export default function Layout({ children }: LayoutProps) {
             <NavLink to="/predictions" className={location.pathname === '/predictions' ? 'active' : ''}>
               <Timeline sx={{ mr: 1 }} /> Predictions
             </NavLink>
+            <NavLink to="/swing" className={location.pathname === '/swing' ? 'active' : ''}>
+              <AccountBalance sx={{ mr: 1 }} /> Swing
+            </NavLink>
           </Box>
 
           <Box sx={{ display: 'flex', ml: 2 }}>

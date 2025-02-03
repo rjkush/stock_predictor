@@ -29,18 +29,7 @@ const ImportantDatesTable: React.FC<ImportantDatesTableProps> = ({ commonDates }
   const currentDates = commonDates.slice(page * datesPerPage, (page + 1) * datesPerPage);
 
   return (
-    <Paper
-      sx={{
-        p: 2,
-        backgroundColor: '#131722',
-        width: '100%',
-        marginTop: '20px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
+    <Paper sx={{ p: 2, backgroundColor: '#131722', width: '100%', marginTop: '20px' }}>
       <Box sx={{ mb: 2 }}>
         <Typography variant="h6" gutterBottom>
           Important Dates
@@ -60,18 +49,7 @@ const ImportantDatesTable: React.FC<ImportantDatesTableProps> = ({ commonDates }
           <TableBody>
             {currentDates.map((date, index) => (
               <TableRow key={index}>
-                <TableCell
-                  align="center"
-                  sx={{
-                    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                    '&:hover': {
-                      transform: 'scale(1.05)',
-                      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
-                    },
-                  }}
-                >
-                  {format(date, 'dd MMM yyyy')}
-                </TableCell>
+                <TableCell>{format(date, 'dd MMM yyyy')}</TableCell>
               </TableRow>
             ))}
           </TableBody>

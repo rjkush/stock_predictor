@@ -79,16 +79,11 @@ const StockReversalTable: React.FC<StockReversalTableProps> = ({ onDatesChange }
         </Button>
       </Box>
 
-      <TableContainer
-        sx={{
-          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
-          borderRadius: '8px',
-          overflow: 'hidden',
-        }}
-      >
+      <TableContainer>
         <Table size="small">
           <TableHead>
             <TableRow>
+              <TableCell>Interval (Days)</TableCell>
               <TableCell>Reversal Date</TableCell>
             </TableRow>
           </TableHead>
@@ -97,17 +92,8 @@ const StockReversalTable: React.FC<StockReversalTableProps> = ({ onDatesChange }
               .filter((_, index) => Math.floor(index / REVERSAL_INTERVALS.length) === currentCycle)
               .map((entry, index) => (
                 <TableRow key={index}>
-                  <TableCell
-                    sx={{
-                      transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                      '&:hover': {
-                        transform: 'scale(1.05)',
-                        boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
-                      },
-                    }}
-                  >
-                    {format(entry.date, 'dd MMM yyyy')}
-                  </TableCell>
+                  <TableCell>{entry.interval}</TableCell>
+                  <TableCell>{format(entry.date, 'dd MMM yyyy')}</TableCell>
                 </TableRow>
               ))}
           </TableBody>

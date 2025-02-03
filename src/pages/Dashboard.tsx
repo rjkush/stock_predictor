@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { Box, Grid, Paper, Typography, Button, Chip } from '@mui/material';
 import { createChart, ColorType } from 'lightweight-charts';
 import * as tf from '@tensorflow/tfjs';
-import PredictionDateBox from '../components/PredictionDateBox';
 
 interface StockData {
   time: string;
@@ -35,7 +34,7 @@ export default function Dashboard() {
       },
       width: chartContainerRef.current.clientWidth,
       height: 400,
-    });
+  });
 
     const lineSeries = chart.addLineSeries({
       color: '#00C805',
@@ -55,8 +54,8 @@ export default function Dashboard() {
     // Cleanup
     return () => {
       chart.remove();
-    };
-  }, []);
+};
+}, []);
 
   // Predict reversal using TensorFlow.js
   useEffect(() => {
@@ -116,10 +115,6 @@ export default function Dashboard() {
               </Box>
             )}
           </Paper>
-        </Grid>
-
-        <Grid item xs={12}>
-          <PredictionDateBox />
         </Grid>
 
         <Grid item xs={12} md={6}>
