@@ -10,6 +10,7 @@ import TestComponent from './components/TestComponent';
 import StockReversalTable from './components/StockReversalTable';
 import ImportantDatesTable from './components/ImportantDatesTable';
 import Swing from './Swing';
+import Intraday from './pages/Intraday';
 import React, { useState } from 'react';
 
 console.log('App component is rendering'); // Debug log
@@ -57,6 +58,7 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/predictions" element={<Predictions />} />
             <Route path="/swing" element={<Swing />} />
+            <Route path="/intraday" element={<Intraday />} />
           </Routes>
         </Layout>
       </Router>
